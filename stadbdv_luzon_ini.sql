@@ -30,7 +30,7 @@ FROM mco1_stadvdb.clinics
 WHERE RegionName IN ('Ilocos Region (I)', 'Cagayan Valley (II)', 'Central Luzon (III)', 'CALABARZON (IV-A)', 'MIMAROPA (IV-B)', 'Bicol Region (V)', 'National Capital Region (NCR)', 'Cordillera Administrative Region (CAR)');
 
 
-INSERT INTO stadvdb_luzon.appointments (pxid, clinicid, doctorid, apptid, app_type, is_Virtual, status, TimeQueued, QueueDate, StartTime, EndTime, RegionName, Province)
+INSERT INTO stadvdb_luzon.dappointments (pxid, clinicid, doctorid, apptid, app_type, is_Virtual, status, TimeQueued, QueueDate, StartTime, EndTime, RegionName, Province)
 SELECT pxid, clinicid, doctorid, apptid, app_type, is_Virtual, status, TimeQueued, QueueDate, StartTime, EndTime, RegionName, Province
 FROM mco1_stadvdb.DenormalizedAppointments
 WHERE RegionName IN ('Ilocos Region (I)', 'Cagayan Valley (II)', 'Central Luzon (III)', 'CALABARZON (IV-A)', 'MIMAROPA (IV-B)', 'Bicol Region (V)', 'National Capital Region (NCR)', 'Cordillera Administrative Region (CAR)');
