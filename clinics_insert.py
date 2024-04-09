@@ -3,7 +3,7 @@ import mysql.connector
 # Define source and destination database connection parameters
 source_host = 'localhost'
 source_user = 'root'
-source_password = 'Sigurds.2.Potatoes'
+source_password = 'x'
 source_database = 'mco1_stadvdb'
 
 destination_host = 'ccscloud.dlsu.edu.ph'
