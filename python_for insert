@@ -33,7 +33,7 @@ try:
 
     # Define SQL query to fetch data from source database
     sql_query = '''
-        select pxid, clinicid, doctorid, apptid, app_type, is_Virtual, status, TimeQueued, QueueDate, StartTime, EndTime, RegionName, Province from DernormalizedAppointments
+        select pxid, clinicid, doctorid, apptid, app_type, is_Virtual, status, QueueDate, StartTime, EndTime, RegionName, Province from DernormalizedAppointments
         WHERE RegionName IN ('Ilocos Region (I)', 'Cagayan Valley (II)', 'Central Luzon (III)', 'CALABARZON (IV-A)', 'MIMAROPA (IV-B)', 'Bicol Region (V)', 'National Capital Region (NCR)', 'Cordillera Administrative Region (CAR)');;
     '''
     # For Luzon
@@ -50,8 +50,8 @@ try:
     for row in rows:
         # Define SQL query to insert data into the destination database
         insert_query = '''
-        #INSERT INTO appointments(pxid, clinicid, doctorid, apptid, app_type, is_Virtual, status, TimeQueued, QueueDate, StartTime, EndTime, RegionName, Province)
-        #VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+        #INSERT INTO appointments(pxid, clinicid, doctorid, apptid, app_type, is_Virtual, status, QueueDate, StartTime, EndTime, RegionName, Province)
+        #VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
         '''
         #INSERT INTO appointments(pxid, clinicid, doctorid, apptid, app_type, is_Virtual, status, TimeQueued, QueueDate, StartTime, EndTime, RegionName, Province)
         #VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
