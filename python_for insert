@@ -34,12 +34,15 @@ try:
     # Define SQL query to fetch data from source database
     sql_query = '''
         select pxid, clinicid, doctorid, apptid, app_type, is_Virtual, status, QueueDate, StartTime, EndTime, RegionName, Province from DernormalizedAppointments
-        WHERE RegionName IN ('Ilocos Region (I)', 'Cagayan Valley (II)', 'Central Luzon (III)', 'CALABARZON (IV-A)', 'MIMAROPA (IV-B)', 'Bicol Region (V)', 'National Capital Region (NCR)', 'Cordillera Administrative Region (CAR)');;
+        WHERE RegionName IN ('Ilocos Region (I)', 'Cagayan Valley (II)', 'Central Luzon (III)', 'CALABARZON (IV-A)', 'MIMAROPA (IV-B)', 'Bicol Region (V)', 'National Capital Region (NCR)', 'Cordillera Administrative Region (CAR)')
+        AND QueueDate > '2022-12-31';
     '''
     # For Luzon
-    # WHERE RegionName IN ('Ilocos Region (I)', 'Cagayan Valley (II)', 'Central Luzon (III)', 'CALABARZON (IV-A)', 'MIMAROPA (IV-B)', 'Bicol Region (V)', 'National Capital Region (NCR)', 'Cordillera Administrative Region (CAR)');
+    # WHERE RegionName IN ('Ilocos Region (I)', 'Cagayan Valley (II)', 'Central Luzon (III)', 'CALABARZON (IV-A)', 'MIMAROPA (IV-B)', 'Bicol Region (V)', 'National Capital Region (NCR)', 'Cordillera Administrative Region (CAR)')
+    # AND QueueDate > '2022-12-31';
     # For VisMin
-    #WHERE RegionName IN ('Western Visayas (VI)', 'Central Visayas (VII)', 'Eastern Visayas (VIII)','Bangsamoro Autonomous Region in Muslim Mindanao (BARMM)', 'Zamboanga Peninsula (IX)','Northern Mindanao (X)', 'Davao Region (XI)', 'SOCCSKSARGEN (Cotabato Region) (XII)','Caraga (XIII)');
+    # WHERE RegionName IN ('Western Visayas (VI)', 'Central Visayas (VII)', 'Eastern Visayas (VIII)','Bangsamoro Autonomous Region in Muslim Mindanao (BARMM)', 'Zamboanga Peninsula (IX)','Northern Mindanao (X)', 'Davao Region (XI)', 'SOCCSKSARGEN (Cotabato Region) (XII)','Caraga (XIII)')
+    # AND QueueDate > '2022-12-31';
     # Execute the SQL query
     source_cursor.execute(sql_query)
 
